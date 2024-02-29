@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script display active IPv4 on the machine
 
-ifconfig | -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" cut -b 6-
+nc -l localhost 98

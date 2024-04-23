@@ -1,5 +1,5 @@
 # Configures Client File
-file { '~/.ssh/ssh_config':
+file { '/etc/ssh/ssh_config':
   ensure => present,
   content=> "
       Host *

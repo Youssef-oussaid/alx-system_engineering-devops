@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install haproxy -y
 
-text_to_append=$(EOL
+text_to_append=$(cat <<EOL
 frontend ourwebsitefrontend
     bind *:80
     mode http

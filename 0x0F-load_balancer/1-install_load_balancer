@@ -18,3 +18,4 @@ EOL
 )
 
 echo "$text_to_append" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
+sudo service haproxy start

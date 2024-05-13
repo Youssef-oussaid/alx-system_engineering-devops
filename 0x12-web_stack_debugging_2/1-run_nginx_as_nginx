@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Makes Nginx run by a different user
+User="nginx"
+nginx_conf="/etc/nginx/nginx.conf"
+sed -i "s/^user .*;$/user $User;/" "$nginx_conf"
+echo "
+server {
+    listen 8080 default_server;
+    listen [::]:8080 default_server;
+
+    # Other server block configurations...
+}
+" > /etc/nginx/sites-available/default
+systemctl restart nginx

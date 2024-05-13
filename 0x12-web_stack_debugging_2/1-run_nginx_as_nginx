@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-# Makes Nginx run by a different user
-User="nginx"
-nginx_conf="/etc/nginx/nginx.conf"
-sed -i "s/^user .*;$/user $User;/" "$nginx_conf"
+# Set the desired username for Nginx
+NGINX_USER="nginx"
+NGINX_CONF="/etc/nginx/nginx.conf"
+cp "$NGINX_CONF" "$NGINX_CONF.bak"
+sed -i "s/^user .*;$/user $NGINX_USER;/" "$NGINX_CONF"
 echo "
 server {
     listen 8080 default_server;

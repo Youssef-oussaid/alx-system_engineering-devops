@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
-
+# to backup all the databases
 USER='root'
 PASSWORD=$1
-
 DATE=$(date +%d-%m-%Y)
-
 SQL_FILE='backup.sql'
-
 ARCHIVE_FILE="${DATE}.tar.gz"
-
 mysqldump --all-databases --user=${USER} --password=${PASSWORD} > ${SQL_FILE}
-
 tar -czvf ${ARCHIVE_FILE} ${SQL_FILE}

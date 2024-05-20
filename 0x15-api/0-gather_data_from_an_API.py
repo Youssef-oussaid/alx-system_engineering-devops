@@ -21,15 +21,16 @@ def print_todo_progress(employee_id):
     
     total_tasks = len(todo_data)
     completed_tasks = sum(1 for task in todo_data if task['completed'])
-    
+
     print(f"Employee {employee_data['name']} is done with tasks ({completed_tasks}/{total_tasks}):")
     for task in todo_data:
         if task['completed']:
             print(f"\t{task['title']}")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     if len(sys.argv) != 2:
+        print("Usage: python script.py <employee_id>")
         sys.exit(1)
-        
+    
     employee_id = sys.argv[1]
     print_todo_progress(employee_id)
